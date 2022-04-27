@@ -1,0 +1,19 @@
+body {
+	font-family: arial;
+	background-color: rgb(185, 179, 175);
+}
+  div.headerBar{
+    background-color: #000000;
+    padding: 4px;
+  }
+  ul {
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+
+  li a{
+    color: #F0F8FF;
+    padding: 8px;
+  }
