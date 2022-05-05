@@ -1,6 +1,5 @@
-# https://www.katacoda.com/courses/docker/create-nginx-static-web-server
-# Define base image
 FROM nginx
+# Delete standard nginx config file
+RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./web-app /www/data
 COPY ./nginx.conf /etc/nginx/nginx.conf
-# Copy content of the current directory inside container
-COPY ./web-app /usr/share/nginx/html
