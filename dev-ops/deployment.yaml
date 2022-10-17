@@ -1,3 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cr-deployment
+  labels:
+    app: cr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cr
+  template:
+    metadata:
+      labels:
+        app: cr
+    spec:
+      containers:
+      - name: cr
+        image: buckeyja/cr:1.0
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cr-service
+spec:
+  type: ClusterIP
+  selector:
+    app: cr
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
