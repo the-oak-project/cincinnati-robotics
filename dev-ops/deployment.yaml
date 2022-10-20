@@ -19,6 +19,13 @@ spec:
         image: buckeyja/cr:1.0
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 93m
+            memory: 263M
+          limits:
+            cpu: 8829m
+            memory: 932M
 ---
 apiVersion: v1
 kind: Service
