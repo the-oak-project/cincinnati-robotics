@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cr-deployment
+  name: cr
   labels:
     app: cr
 spec:
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cr-service
+  name: cr
 spec:
   type: ClusterIP
   selector:
@@ -45,7 +45,7 @@ kind: Ingress
 metadata:
   creationTimestamp: "2022-06-24T20:55:54Z"
   generation: 1
-  name: cr-ingress
+  name: cr
   namespace: default
   resourceVersion: "7377006"
   uid: 40ebf8e4-8dfd-40e3-9574-7de8aa10442a
@@ -57,7 +57,7 @@ spec:
       paths:
       - backend:
           service:
-            name: cr-service
+            name: cr
             port:
               number: 80
         path: /
